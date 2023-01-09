@@ -60,29 +60,28 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 rials_recipes <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
+> It's  keeps track of all your recipes, ingredients, and inventory. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking the app should allow you to make them public so anyone can access them.
 
-**[your_project__name]** is a...
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> Describe the tech stack and include only the relevant sections that apply to your project.
-
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a href="https://reactjs.org/">HTML</a></li>
+    <li><a href="https://reactjs.org/">CSS</a></li>
   </ul>
 </details>
 
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
+    <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
+    <li><a href="https://rspec.info/">Rspec</a></li>
   </ul>
 </details>
 
@@ -99,9 +98,12 @@ After you're finished please remove all the comments and instructions!
 
 > Describe between 1-3 key features of the application.
 
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
+- A login page.
+- A registration page.
+- A food list (with all CRUD implementation, except for 'update').
+- A recipes list (with all CRUD implementation, except for 'update').
+- A general shopping list view (all missing food for all your recipes and total price).
+- A list of all public recipes from other users with their names and total prices.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -139,52 +141,50 @@ Example command:
 
 Clone this repository to your desired folder:
 
-<!--
-Example commands:
 
-```sh
-  cd my-folder
-  git clone git@github.com:myaccount/my-project.git
 ```
---->
+  git clone https://github.com/Bateyjosue/rails_recipes.git
+  
+  cd rails_recipes
+  
+```
 
 ### Install
 
 Install this project with:
 
-<!--
-Example command:
-
-```sh
-  cd my-project
-  gem install
 ```
---->
+  bundle install
+```
 
 ### Usage
 
 To run the project, execute the following command:
+1. Create Database
+```
+  rails db:create
+```
 
-<!--
-Example command:
+2. run the migration
+```
+  rails db:migrate
+```
 
-```sh
+3. Then run the develelopment server
+```
   rails server
 ```
---->
+
 
 ### Run tests
 
 To run tests, run the following command:
 
-<!--
-Example command:
 
-```sh
-  bin/rails test test/models/article_test.rb
 ```
---->
-
+  rails rspec spec
+```
+<!-- 
 ### Deployment
 
 You can deploy this project using:
@@ -195,7 +195,7 @@ Example:
 ```sh
 
 ```
- -->
+ --> -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -203,20 +203,17 @@ Example:
 
 ## 👥 Authors <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
+👤 **Josue Batey**
 
-👤 **Author1**
+- GitHub: [@Bateyjosue](https://github.com/Bateyjosue)
+- LinkedIn: [Bateyjosue](https://www.linkedin.com/in/josue-ishara/)
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
+<!-- 👤 **Author2**
 
 - GitHub: [@githubhandle](https://github.com/githubhandle)
 - Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
+ -->
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
@@ -225,9 +222,9 @@ Example:
 
 > Describe 1 - 3 features you will add to the project.
 
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- [ ] A login page.
+- [ ] A registration page.
+- [ ] A food list (with all CRUD implementation, except for 'update').
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -245,9 +242,8 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
 
-If you like this project...
+If you like this project Please give it ⭐️
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -255,15 +251,19 @@ If you like this project...
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
 
 I would like to thank...
+
+- Thanks to [Microverse](https://www.microverse.org/) for giving this opportunity to learn ...
+- Code Reviewers & Coding Partners.
+- Hat tip to anyone whose code was used.
+- Inspiration.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FAQ (optional) -->
 
-## ❓ FAQ (OPTIONAL) <a name="faq"></a>
+<!-- ## ❓ FAQ (OPTIONAL) <a name="faq"></a>
 
 > Add at least 2 questions new developers would ask when they decide to use your project.
 
@@ -273,7 +273,7 @@ I would like to thank...
 
 - **[Question_2]**
 
-  - [Answer_2]
+  - [Answer_2] -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
