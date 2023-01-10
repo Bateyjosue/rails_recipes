@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  get 'home/index'
+  # get 'food/index'
+  # get 'food/show'
+  # get 'food/new'
+  # get 'food/create'
+  # get 'food/destroy'
+  # get 'home/index'
   # devise_for :users
   devise_for :users, path: 'auth',
                      path_names: {
@@ -15,4 +20,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root 'home#index'
+  
+  resources :food, except: [:update]
+  resources :users do
+  end
 end
