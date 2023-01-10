@@ -1,0 +1,26 @@
+<section class="food-list">
+  <div class="add-food">
+    <a href=<%= new_food_path %>>Add Food</a>
+  </div>
+  <table>
+    <thead>
+      <td>Food</td>
+      <td>Measurement Unit</td>
+      <td>Unit Price</td>
+      <td>Actions</td>
+    </thead>
+    <% if @foods%>
+      <% @foods.each do |food| %>
+    <tr>
+        <td><%= food.name%></td>
+        <td><%= food.meeasurment_unit%></td>
+        <td><%= food.price%></td>
+        <td>Delete</td>
+    </tr>
+      <% end %>
+
+    <% else %>
+      <td>No Food Found</td>
+    <% end %>
+  </table>
+</section>
