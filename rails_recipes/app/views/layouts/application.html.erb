@@ -8,11 +8,35 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <% if notice or alert  %>
+      <div class="popup-notication">
+          <div class="popup-content-notice">
+            <span class="material-symbols-outlined">task_alt</span>
+            <p>
+                <p class="notice"><%= notice %></p>
+            </p>
+          </div> 
+          <div class="popup-content-alert">
+            <span class="material-symbols-outlined">info</span>
+            <p>
+                <p class="alert"><%= alert %></p>
+            </p>
+          </div>         
+      </div>
+      
+    <% end %>
+    <main>
+      <%= yield %>
+    </main>
+    <script>
+      let notication = document.querySelector('.popup-notication');
+      setTimeout(() => {
+        notication.style.visibility = 'hidden';
+      }, 3000);
+    </script>
   </body>
 </html>
