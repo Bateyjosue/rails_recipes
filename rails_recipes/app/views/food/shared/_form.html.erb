@@ -1,23 +1,22 @@
   <%= form_with model: @food, local: true, method: :post, url: '/food' do |form| %>
-    <div class="field">
+    <%# <div class="field"> %>
       <%= form.label :name, "Food Name" %>
       <%= form.text_field :name %>
-    </div>
-    <div class="field">
+    <%# </div>
+    <div class="field"> %>
       <%= form.label :meeasurment_unit, "Measurement Unit" %>
       <%= form.text_field :meeasurment_unit %>
-    </div>
-    <div class="field">
+    <%# </div>
+    <div class="field"> %>
       <%= form.label :price, "Unit Price" %>
       <%= form.text_field :price %>
-    </div>
-    <div class="field">
+    <%# </div>
+    <div class="field"> %>
       <%= form.label :quatity, "Quantity " %>
       <%= form.text_field :quantity %>
-    </div>
-    <div class="actions">
+    <%# </div>
+    <div class="actions"> %>
       <%= form.submit "Add Food" %>
-    </div>
-
+    <%# </div> %>
 
   <% end %>
