@@ -1,26 +1,35 @@
 <section class="food-list">
   <div class="add-food">
-    <a href=<%= new_food_path %>>Add Food</a>
+    <a href=<%= new_food_path %>>
+    <span class="material-symbols-outlined">add</span>
+    <span>Add Food</span>
+    </a>
   </div>
   <table>
     <thead>
-      <td>Food</td>
-      <td>Measurement Unit</td>
-      <td>Unit Price</td>
-      <td>Actions</td>
+      <th>Food</th>
+      <th>Measurement Unit</th>
+      <th>Unit Price</th>
+      <th>Actions</th>
     </thead>
-    <% if @foods%>
-      <% @foods.each do |food| %>
-    <tr>
-        <td><%= food.name%></td>
-        <td><%= food.meeasurment_unit%></td>
-        <td><%= food.price%></td>
-        <td>Delete</td>
-    </tr>
-      <% end %>
+    <tbody>
+      <% if @foods%>
+        <% @foods.each do |food| %>
+      <tr>
+          <td><%= food.name%></td>
+          <td><%= food.meeasurment_unit%></td>
+          <td><%= food.price%></td>
+          <td class="food-delete">
+            <a href=<%= %>>
+              <span class="material-symbols-outlined">delete_forever</span>
+            </a>
+          </td>
+      </tr>
+        <% end %>
 
-    <% else %>
-      <td>No Food Found</td>
-    <% end %>
+      <% else %>
+        <td>No Food Found</td>
+      <% end %>
+    </tbody>
   </table>
 </section>
