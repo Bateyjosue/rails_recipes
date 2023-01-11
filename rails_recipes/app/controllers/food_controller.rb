@@ -26,5 +26,9 @@ class FoodController < ApplicationController
     params.require(:food).permit(:name, :meeasurment_unit, :price, :quantity)
   end
 
-  def destroy; end
+  def destroy
+    Food.find(params[:id]).destroy
+    flash[:notice] = "#{@foood.name} has been destroyed"
+    redirect_to food_index_path
+  end
 end

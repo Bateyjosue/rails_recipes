@@ -20,13 +20,10 @@
           <td><%= food.meeasurment_unit%></td>
           <td><%= food.price%></td>
           <td class="food-delete">
-            <a href=<%= %>>
-              <span class="material-symbols-outlined">delete_forever</span>
-            </a>
+            <%= link_to "delete_forever", "/food/#{food.id}", method: :delete, class: "material-symbols-outlined", data: {turbo_method: :delete} %>
           </td>
       </tr>
         <% end %>
-
       <% else %>
         <td>No Food Found</td>
       <% end %>
