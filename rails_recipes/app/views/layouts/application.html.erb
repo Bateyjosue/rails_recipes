@@ -8,10 +8,12 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= javascript_include_tag :application %>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   </head>
 
   <body>
+
     <% if notice or alert  %>
       <div class="popup-notication">
           <div class="popup-content-notice">
@@ -29,14 +31,39 @@
       </div>
       
     <% end %>
+    <header>
+      <h1>rails recipes</h1>
+      <nav>
+      <% if user_signed_in? %>
+        <a href="/">Home</a>
+        <a href=<%= food_index_path %>>Foods</a>
+        <a href="#">Recipes</a>
+        <a href="#">Inventory</a>
+        <a class="signout"href="#"><%= link_to "Sign Out", destroy_user_session_path, class: 'signout',data: {turbo_method: :delete} %></a>
+        <% else %>
+        <a href=<%= new_user_session_path %>>Log In</a>
+        <a href=<%= new_user_registration_path%>>Sign Up</a>
+        
+        <% end %>
+        
+      </nav>
+      <div class="profile">
+        <%= current_user.email if user_signed_in? %> 
+      </div>
+    </header>
     <main>
       <%= yield %>
     </main>
     <script>
       let notication = document.querySelector('.popup-notication');
+      let signout = document.querySelector('.signout');
       setTimeout(() => {
         notication.style.visibility = 'hidden';
       }, 3000);
+
+      signout.addEventListener('click', () => {
+        window.location.reload();
+      });
     </script>
   </body>
 </html>
