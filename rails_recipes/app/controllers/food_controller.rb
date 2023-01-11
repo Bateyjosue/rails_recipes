@@ -3,8 +3,7 @@ class FoodController < ApplicationController
     @foods = Food.includes(:user)
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @food = Food.new
@@ -18,14 +17,14 @@ class FoodController < ApplicationController
       redirect_to food_index_path
     else
       render :new, alert: 'Error: Post not saved.'
-    end 
-    
+    end
   end
+
   private
+
   def food_params
     params.require(:food).permit(:name, :meeasurment_unit, :price, :quantity)
   end
 
-  def destroy
-  end
+  def destroy; end
 end
