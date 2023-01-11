@@ -20,7 +20,7 @@
           <td><%= food.meeasurment_unit%></td>
           <td><%= food.price%></td>
           <td class="food-delete">
-            <%= link_to "delete_forever", "/food/#{food.id}", method: :delete, class: "material-symbols-outlined", data: {turbo_method: :delete} %>
+            <%= button_to "delete_forever", food_path(food.id), data: { :confirm => "Are you sure?"}, :method => :delete, class: "material-symbols-outlined" %>
           </td>
       </tr>
         <% end %>
