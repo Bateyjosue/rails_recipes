@@ -23,6 +23,42 @@
 
 
 @media screen and (min-width: 768px) {
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4rem;
+    position: fixed;
+    top: 0rem;
+    left: 0;
+    right: 0;
+    gap: 1rem;
+    background: var(--bg-color);
+    color: white;
+  }
+
+  header h1 {
+    font-size: 3rem;
+  }
+
+  header nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  header nav a {
+    color: white;
+    font-weight: bold;
+    transition: all 4ms ease-in-out;
+    letter-spacing: 0.05em;
+  }
+
+  header nav a:hover {
+    color: red;
+  }
+
   .login-container {
     width: 100%;
     
@@ -36,7 +72,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 5rem auto;
+    margin: 8rem auto;
     height: 66vh;
     width: 25%;
     font-weight: 3rem;
@@ -135,5 +171,52 @@
   .popup-content-alert span {
     font-size: 4rem;
     color: blue;
+  }
+
+  .food-list {
+    padding: 0rem 3rem;
+    width: 100%;
+    margin-top: 7rem;
+  }
+  .food-list table{
+    margin: 0rem auto;
+    width: 70%;
+  }
+
+  .food-list table thead{
+    background: rgb(171, 170, 170);
+    color: white
+  }
+
+  .food-list table thead th{
+    padding: .5rem;
+  }
+
+  .food-list table tbody tr td{
+    padding: .5rem 1rem;
+    text-align: center;
+  }
+
+  .add-food a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background: var(--bg-color);
+    color:white;
+    border-radius: .4rem;
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    gap: .5rem;
+    font-weight: bold;
+    letter-spacing: .05em;
+  }
+
+  .food-delete a {
+    text-decoration: none;
+    color:var(--bg-color);
+    border-radius: 1rem;
+    width: fit-content;
+    padding: 0.2rem;
+
   }
 }
