@@ -1,0 +1,35 @@
+<section class="recipe-detail">
+  <h2><%= @recipe.name%></h2>
+  <p>Preparation Time: <%= @recipe.preparation_time %> Hour<%= 's' if @recipe.preparation_time.to_i>1  %></p>
+  
+  
+  <div class="public">
+    <span>Public</span>
+    <% if@recipe.public %>
+      <span class="material-symbols-outlined">radio_button_checked</span>
+    <% else %>
+      <span class="material-symbols-outlined">radio_button_checked</span>
+    <% end %>
+    
+  </div>
+  <p>Cooking Tme: <%= @recipe.cooking_time %> Hour<%= 's' if @recipe.cooking_time.to_i>1  %></p>
+  <p>steps go here...</p>
+  <div class="btns">
+    <%= button_to "Generate Shooping list" %>
+    <%= button_to "Add ingredient" %>
+  </div>
+  <hr/>
+  <div>
+    <table>
+      <thead>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Value</th>
+        <th>Actions</th>
+      </thead>
+      <tbody>
+        
+      </tbody>
+    </table>
+  </div>
+</section>

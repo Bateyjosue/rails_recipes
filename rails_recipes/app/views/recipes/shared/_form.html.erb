@@ -1,0 +1,18 @@
+<%= form_with model: @recipe, local: true, method: :post, url: '/recipes' do |f|%>
+  <%= f.label :name, "Name" %>
+  <%= f.text_field :name, placeholder: "Recipe Name here" %>
+  
+  <%= f.label :preparation_time, "Preparation Time" %>
+  <%= f.text_field :preparation_time, placeholder: "Preparation Time in Hours" %>
+
+  <%= f.label :cooking_time, "Cooking Time" %>
+  <%= f.text_field :cooking_time, placeholder: "Cooking Time in Hours" %>
+  
+  <%= f.label :description, "Description Time" %>
+  <%= f.text_area :description, size: "70x5", placeholder: "Your description here" %>
+
+  <%= f.label :public, "Public" %>
+  <%= f.select :public, [true, false] %>
+
+  <%= f.submit "Add Recipe" %>
+<% end %>

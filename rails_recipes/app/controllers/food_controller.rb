@@ -1,6 +1,6 @@
 class FoodController < ApplicationController
   def index
-    @foods = Food.includes(:user)
+    @foods = Food.where(user_id: current_user.id)
   end
 
   def show; end
@@ -20,11 +20,16 @@ class FoodController < ApplicationController
     end
   end
 
+  def destroy
+    @food = Food.find(params[:id])
+    @food.destroy
+    flash[:notice] = "#{@food.name} has been destroyed"
+    redirect_to food_index_path
+  end
+
   private
 
   def food_params
     params.require(:food).permit(:name, :meeasurment_unit, :price, :quantity)
   end
-
-  def destroy; end
 end
