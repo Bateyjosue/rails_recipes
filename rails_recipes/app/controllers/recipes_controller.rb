@@ -15,18 +15,18 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     @recipe.user_id = current_user.id
 
-    if @recipe.save!
-      flash[:notice] ="Recipe created successfully"
-      redirect_to recipes_path
-    end
+    return unless @recipe.save!
+
+    flash[:notice] = 'Recipe created successfully'
+    redirect_to recipes_path
   end
 
   def destroy
     @recipe = Recipe.find(params[:id])
-    if @recipe.destroy!
-      flash[:notice] = "recipe has been successfully deleted"
-      redirect_to recipes_path
-    end
+    return unless @recipe.destroy!
+
+    flash[:notice] = 'recipe has been successfully deleted'
+    redirect_to recipes_path
   end
 
   private

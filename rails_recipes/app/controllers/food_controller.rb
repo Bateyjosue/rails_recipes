@@ -26,11 +26,10 @@ class FoodController < ApplicationController
     flash[:notice] = "#{@food.name} has been destroyed"
     redirect_to food_index_path
   end
-  
+
   private
 
   def food_params
     params.require(:food).permit(:name, :meeasurment_unit, :price, :quantity)
   end
-
 end
