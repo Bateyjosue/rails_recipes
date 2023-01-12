@@ -14,20 +14,21 @@
   </head>
 
   <body>
-
     <% if notice  %>
       <div class="popup-notication">
-          <div class="popup-content-notice">
-            <span class="material-symbols-outlined">task_alt</span>
-            <p class="notice"><%= notice %></p>
-          </div> 
-    <% elsif alert %>
-          <div class="popup-content-alert">
-            <span class="material-symbols-outlined">info</span>
-            <p class="alert"><%= alert %></p>
-          </div>         
+        <div class="popup-content-notice">
+          <span class="material-symbols-outlined">task_alt</span>
+          <p class="notice"><%= notice %></p>
+        </div> 
       </div>
       
+    <% elsif alert %>
+      <div class="popup-notication">
+        <div class="popup-content-alert">
+          <span class="material-symbols-outlined">info</span>
+          <p class="alert"><%= alert %></p>
+        </div>         
+      </div>
     <% end %>
     <header>
       <h1>rails recipes</h1>
