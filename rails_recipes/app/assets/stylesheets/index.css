@@ -128,6 +128,7 @@
 
   .food-new form input,
   .new-recipe form input,
+  .new-recipe-food form input,
   textarea {
     width: 50%;
     border-radius: 0.4em;
@@ -226,7 +227,9 @@
   .food-new,
   .recipes-list-container,
   .recipe-detail,
-  .new-recipe {
+  .new-recipe,
+  .new-recipe-food,
+  .public-recipe {
     padding: 0 3rem;
     width: 100%;
     margin-top: 7rem;
@@ -257,8 +260,9 @@
   }
 
   .food-new form,
-  .new-recipe form {
-    line-height: 3em;
+  .new-recipe form,
+  .new-recipe-food form {
+    line-height: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -266,11 +270,16 @@
     padding: 1em;
   }
 
+  .new-recipe-food form {
+    gap: 1rem
+  }
+
   .new-recipe form textarea {
     height: 7rem;
   }
 
-  .new-recipe form select {
+  .new-recipe form select,
+  .new-recipe-food form select {
     width: 10%;
     border-radius: 0;
     padding: 0.3em 1em;
@@ -291,6 +300,25 @@
     font-weight: bold;
     letter-spacing: 0.05em;
   }
+
+  .new-recipe-food form input[type="submit"] {
+    background: var(--bg-color);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    border: none;
+    margin-top: 1rem;
+    width: fit-content;
+
+  }
+
+  .new-recipe-food form .actions {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+  }
+
 
   .recipes-list {
     /* margin: 7rem 4rem; */
@@ -405,5 +433,28 @@
     padding: 0 0.5rem;
     border-radius: 1rem;
     border: var(--bg-gray-color) 2px solid;
+  }
+
+  .public-recipe ul {
+    list-style-type: none;
+  }
+
+  .public-recipe .section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin: 1rem 0rem;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    color: var(--bg-gray-color)
+  }
+
+  .public-recipe ul li{
+    border: var(--bg-color) solid 3px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .author-name {
+    font-weight: bold;
   }
 }

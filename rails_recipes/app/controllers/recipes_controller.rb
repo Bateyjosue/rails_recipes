@@ -9,6 +9,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    @recipe_foods = @recipe.recipe_foods.includes(:food)
   end
 
   def create
@@ -27,6 +28,10 @@ class RecipesController < ApplicationController
 
     flash[:notice] = 'recipe has been successfully deleted'
     redirect_to recipes_path
+  end
+
+  def public
+    @recipes = Recipe.where(public: true).order(created_at: :desc)
   end
 
   private

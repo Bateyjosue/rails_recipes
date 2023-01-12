@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'recipe_foods/index'
+  get 'recipe_foods/new'
+  get 'recipe_foods/create'
+  get 'recipe_foods/destroy'
   # get 'recipes/index'
   # get 'recipes/new'
   # get 'recipes/create'
@@ -15,7 +19,10 @@ Rails.application.routes.draw do
   #                      sign_up: 'cmon_let_me_in'
   #                    }
 
-  root 'home#index'
+  root 'recipes#public'
   resources :food, only: [:index, :new, :create, :destroy]
-  resources :recipes, only: [:index, :new, :show, :create, :destroy]
+  resources :recipes, only: [:index, :new, :show,:create, :destroy] do
+    resources :recipe_foods
+  end
+
 end
