@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  # get 'recipes/index'
+  # get 'recipes/new'
+  # get 'recipes/create'
+  # get 'recipes/destroy'
   devise_for :users
   # devise_for :users, path: 'auth',
   #                    path_names: {
@@ -13,4 +17,5 @@ Rails.application.routes.draw do
 
   root 'home#index'
   resources :food, only: [:index, :new, :create, :destroy]
+  resources :recipes, only: [:index, :new, :show, :create, :destroy]
 end
