@@ -1,5 +1,5 @@
 <section class="recipe-detail">
-  <h2><%= @recipe.name%></h2>
+  <h2><%= @recipe.name%>#<%= @recipe.id%></h2>
   <p>Preparation Time: <%= @recipe.preparation_time %> Hour<%= 's' if @recipe.preparation_time.to_i>1  %></p>
   
   
@@ -17,10 +17,14 @@
   <div class="btns">
     <%= button_to "Generate Shooping list" %>
     <div class="add-food">
-    <a href=<%= new_food_path %>>
+    <% if @recipe.user == current_user %>
+    <a href=<%= new_recipe_recipe_food_path(@recipe.id) %>>
       <span class="material-symbols-outlined">add</span>
       <span>Add Food</span>
     </a>
+    
+    <% end %>
+    
   </div>
     <%= button_to "Add ingredient" %>
   </div>
@@ -34,6 +38,17 @@
         <th>Actions</th>
       </thead>
       <tbody>
+        <% @recipe_foods.each do |recipe_food| %>
+          <tr>
+            <td><%= recipe_food.food.name %></td>
+            <td><%= recipe_food.quantity %></td>
+            <td><%= recipe_food.food.price %></td>
+            <td>
+              <span class="material-symbols-outlined">edit_square</span>
+              <span class="material-symbols-outlined">delete_forever</span>
+            </td>
+          </tr>
+        <% end %>
         
       </tbody>
     </table>
