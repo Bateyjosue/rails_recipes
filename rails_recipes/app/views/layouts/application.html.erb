@@ -15,19 +15,16 @@
 
   <body>
 
-    <% if notice or alert  %>
+    <% if notice  %>
       <div class="popup-notication">
           <div class="popup-content-notice">
             <span class="material-symbols-outlined">task_alt</span>
-            <p>
-                <p class="notice"><%= notice %></p>
-            </p>
+            <p class="notice"><%= notice %></p>
           </div> 
+    <% elsif alert %>
           <div class="popup-content-alert">
             <span class="material-symbols-outlined">info</span>
-            <p>
-                <p class="alert"><%= alert %></p>
-            </p>
+            <p class="alert"><%= alert %></p>
           </div>         
       </div>
       
@@ -38,7 +35,7 @@
       <% if user_signed_in? %>
         <a href="/">Home</a>
         <a href=<%= food_index_path %>>Foods</a>
-        <a href="#">Recipes</a>
+        <a href=<%= recipes_path %>>Recipes</a>
         <a href="#">Inventory</a>
         <a class="signout"href="#"><%= link_to "Sign Out", destroy_user_session_path, class: 'signout',data: {turbo_method: :delete} %></a>
         <% else %>
@@ -49,7 +46,8 @@
         
       </nav>
       <div class="profile">
-        <%= current_user.email if user_signed_in? %> 
+        <%= current_user.email if user_signed_in? %>
+        <span class="material-symbols-outlined">account_circle</span> 
       </div>
     </header>
     <main>
