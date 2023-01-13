@@ -6,5 +6,4 @@ class Food < ApplicationRecord
   validates :quantity, presence: true
 
   has_many :recipe_foods, dependent: :destroy
-
 end

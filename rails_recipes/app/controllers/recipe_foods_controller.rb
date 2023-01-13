@@ -30,6 +30,7 @@ class RecipeFoodsController < ApplicationController
   end
 
   private
+
   def rec_food_params
     params.require(:recipe_food).permit(:quantity, :food_id)
   end
