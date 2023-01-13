@@ -271,7 +271,7 @@
   }
 
   .new-recipe-food form {
-    gap: 1rem
+    gap: 1rem;
   }
 
   .new-recipe form textarea {
@@ -310,7 +310,6 @@
     border: none;
     margin-top: 1rem;
     width: fit-content;
-
   }
 
   .new-recipe-food form .actions {
@@ -318,7 +317,6 @@
     display: flex;
     flex-direction: column;
   }
-
 
   .recipes-list {
     /* margin: 7rem 4rem; */
@@ -442,13 +440,13 @@
   .public-recipe .section-title {
     font-size: 2rem;
     text-align: center;
-    margin: 1rem 0rem;
+    margin: 1rem 0;
     text-decoration: underline;
     text-underline-offset: 10px;
-    color: var(--bg-gray-color)
+    color: var(--bg-gray-color);
   }
 
-  .public-recipe ul li{
+  .public-recipe ul li {
     border: var(--bg-color) solid 3px;
     margin-bottom: 1rem;
     padding: 1rem;
