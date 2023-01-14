@@ -1,7 +1,7 @@
 databases:
   - name: rails_recipes
     databaseName: rails_recipes_test
-    user: postgres
+    user: postgresql
 
 services:
   - type: web
