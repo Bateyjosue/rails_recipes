@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
-  database: rails_recipes_production
-  username: rails_recipes
-  password: <%= ENV["RAILS_RECIPES_DATABASE_PASSWORD"] %>
+  # database: rails_recipes_production
+  # username: rails_recipes
+  # password: <%= ENV["RAILS_RECIPES_DATABASE_PASSWORD"] %>
+  url: <%= ENV={['DATABASE_URL0']%>
