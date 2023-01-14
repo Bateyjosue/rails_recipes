@@ -1,0 +1,32 @@
+<section class="food-list">
+  <div class="add-food">
+    <a href=<%= new_food_path %>>
+      <span class="material-symbols-outlined">add</span>
+      <span>Add Food</span>
+    </a>
+  </div>
+  <table>
+    <thead>
+      <th>Food</th>
+      <th>Measurement Unit</th>
+      <th>Unit Price</th>
+      <th>Actions</th>
+    </thead>
+    <tbody>
+      <% if @foods%>
+        <% @foods.each do |food| %>
+      <tr>
+          <td><%= food.name%></td>
+          <td><%= food.meeasurment_unit%></td>
+          <td><%= food.price%></td>
+          <td class="food-delete">
+            <%= button_to "delete_forever", food_path(food.id), data: { :confirm => "Are you sure?"}, :method => :delete, class: "material-symbols-outlined" %>
+          </td>
+      </tr>
+        <% end %>
+      <% else %>
+        <td>No Food Found</td>
+      <% end %>
+    </tbody>
+  </table>
+</section>

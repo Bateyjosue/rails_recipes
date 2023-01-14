@@ -1,0 +1,35 @@
+
+<section class="recipes-list-container">
+  <div class="add-recipe">
+    <a href=<%= new_recipe_path %>>
+      <span class="material-symbols-outlined">add</span>
+      <span>Add Recipe</span>
+    </a>
+  </div>
+  <div class="recipes-list">
+    <% if @recipes %>
+      <% @recipes.each do |recipe| %>
+          <article>
+            <div class="left">
+              <h3>
+                <%if recipe.public or recipe.user == current_user %>
+                  <%= link_to  recipe.name, recipe_path(recipe.id)%>
+                <% else %>
+                  <%= link_to  recipe.name, recipes_path%>
+                <% end %>
+                
+              </h3>
+              <%= button_to "Renove", "recipes/#{recipe.id}" , :method => :delete%>
+            </div>
+            <div class="right">
+              <p>
+                <%= recipe.description %>
+              </p>
+            </div>
+          </article>
+      <% end %>
+    <% else %>
+      No recipe Found
+    <% end %>
+  </div>
+</section>

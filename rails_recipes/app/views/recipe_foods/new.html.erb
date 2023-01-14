@@ -1,0 +1,9 @@
+<section class="new-recipe-food">
+  <%= form_with model: [@recipe, @recipe_food]  do |form| %>
+    <%= form.label :quantity  %>
+    <%= form.number_field :quantity %>
+    <%= form.select :food_id, @foods.map { |food| [food.name, food.id] } %>
+    <%= form.submit "Add Food" %>
+    <%= link_to "Back to recipes", recipes_path%>
+  <%end%>
+</section>

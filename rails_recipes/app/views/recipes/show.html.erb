@@ -1,0 +1,56 @@
+<section class="recipe-detail">
+  <h2><%= @recipe.name%>#<%= @recipe.id%></h2>
+  <p>Preparation Time: <%= @recipe.preparation_time %> Hour<%= 's' if @recipe.preparation_time.to_i>1  %></p>
+  
+  
+  <div class="public">
+    <span>Public</span>
+    <% if@recipe.public %>
+      <span class="material-symbols-outlined">radio_button_checked</span>
+    <% else %>
+      <span class="material-symbols-outlined">radio_button_checked</span>
+    <% end %>
+    
+  </div>
+  <p>Cooking Tme: <%= @recipe.cooking_time %> Hour<%= 's' if @recipe.cooking_time.to_i>1  %></p>
+  <p>steps go here...</p>
+  <div class="btns">
+    <%= button_to "Generate Shooping list" %>
+    <div class="add-food">
+    <% if @recipe.user == current_user %>
+    <a href=<%= new_recipe_recipe_food_path(@recipe.id) %>>
+      <span class="material-symbols-outlined">add</span>
+      <span>Add Food</span>
+    </a>
+    
+    <% end %>
+    
+  </div>
+    <%= button_to "Add ingredient" %>
+  </div>
+  <hr/>
+  <div>
+    <table>
+      <thead>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Value</th>
+        <th>Actions</th>
+      </thead>
+      <tbody>
+        <% @recipe_foods.each do |recipe_food| %>
+          <tr>
+            <td><%= recipe_food.food.name %></td>
+            <td><%= recipe_food.quantity %></td>
+            <td><%= recipe_food.food.price %></td>
+            <td>
+              <span class="material-symbols-outlined">edit_square</span>
+              <span class="material-symbols-outlined">delete_forever</span>
+            </td>
+          </tr>
+        <% end %>
+        
+      </tbody>
+    </table>
+  </div>
+</section>
